@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="lib/ml5.min.js" type="text/javascript"></script>
+    <script src="lib/clmtrackr.js" type="text/javascript"></script>
+    <script src="lib/model_pca_20_svm.js" type="text/javascript"></script>
+    <script src="lib/p5.min.js" type="text/javascript"></script>
+    <script src="lib/p5.dom.min.js" type="text/javascript"></script>
+    <script src="lib/p5.sound.min.js" type="text/javascript"></script>
+    <script src="lib/quicksettings.js" type="text/javascript"></script>
+    <script src="lib/p5.gui.js" type="text/javascript"></script>
+    <script src="lips.js" type="text/javascript"></script>
+    <script src="facemesh.js" type="text/javascript"></script>
+    <script src="hand.js" type="text/javascript"></script>
+    <script src="body.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <div id="stream-wrapper">
+      <button id="show-stream">show stream</button>
+      <div id="audio-stream"></div>
+      <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+      <button id="no-audio-button">continue without audio</button>
+    </div>
+    <div>
+      <div id="sketch-buttons-wrapper">
+        <button id="load-lips-button">lips</button>
+        <button id="load-face-button">face</button>
+        <button id="load-hand-button">hand</button>
+        <button id="load-body-button">body</button>
+      </div>
+      <div id="p5sketch" style="display: flex" />
+    </div>
+
+    <script src="main.js"></script>
+    <script src="stream.js"></script>
+  </body>
+</html>

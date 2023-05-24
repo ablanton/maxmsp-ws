@@ -1,0 +1,22 @@
+{
+  "name": "wstesting",
+  "version": "1.0.0",
+  "main": "ws_server.js",
+  "scripts": {
+    "start": "node ws_server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "http-server -c-1",
+    "serve-ssl": "http-server -c-1 --ssl -C cert.pem"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^9.0.0",
+    "ws": "^8.9.0"
+  },
+  "description": "",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

@@ -1,0 +1,45 @@
+html,
+body {
+  height: 100%;
+  background: #aaaaff;
+}
+body {
+  margin: 0;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+#stream-wrapper {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* position: absolute;
+  top: 50%;
+  right: 50%; */
+}
+
+#audio-stream {
+  height: 50px;
+  width: 50px;
+}
+
+#show-stream {
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+#no-audio-button {
+  margin-top: 10px;
+}
+
+#sketch-buttons-wrapper {
+  display: flex;
+}
+#sketch-buttons-wrapper button {
+  margin: 20px;
+}
