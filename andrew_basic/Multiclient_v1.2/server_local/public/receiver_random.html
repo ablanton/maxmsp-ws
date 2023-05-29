@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebSocket Chat Client</title>
+  </head>
+  <body>
+    <div id="message-list"></div>
+    <script>
+      let randomId = Math.floor(1000 + Math.random() * 9000);
+      const clientId = randomId;
+      const socket = new WebSocket(`ws://localhost:8080/?clientId=${clientId}`);
+
+      socket.addEventListener('open', function (event) {
+        console.log('Connected to server');
+      });
+
+      socket.addEventListener('message', function (event) {
+        document.getElementById('message-list').innerHTML = event.data;
+      });
+
+      socket.addEventListener('close', function (event) {
+        console.log('Connection to server closed');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebSocket Chat Sender</title>
+  </head>
+  <body>
+    
+    <div id="device-select-container" style="display: none;">
+    <label for="message-input">Message:</label>
+    <input type="text" id="message-input">
+    <button type="button" id="send-button">Send</button>
+    </div>
+
+    <script>
+      const clientId = "1111"; // set the client ID to match the server
+      const socket = new WebSocket(`ws://localhost:8080/?clientId=${clientId}`);
+
+      socket.addEventListener('open', function (event) {
+        console.log('Connected to server');
+      });
+
+      socket.addEventListener('close', function (event) {
+        console.log('Connection to server closed');
+      });
+
+      document.getElementById('send-button').addEventListener('click', function () {
+        const messageInput = document.getElementById('message-input');
+        const message = messageInput.value;
+
+        if (message) {
+          socket.send(message);
+          messageInput.value = '';
+        }
+      });
+
+      // Keyboard event listener for Shift + Spacebar
+      document.addEventListener('keydown', function(event) {
+        if (event.shiftKey && event.code === 'Space') {
+          toggleUi();
+        }
+      });
+
+      function toggleUi() {
+            const deviceSelectContainer = document.getElementById('device-select-container');
+
+            if (deviceSelectContainer.style.display === 'none') {
+              // Show MIDI device select container
+              deviceSelectContainer.style.display = 'block';
+            } else {
+              // Hide MIDI device select container
+              deviceSelectContainer.style.display = 'none';
+            }
+      }
+    </script>
+  </body>
+</html>
